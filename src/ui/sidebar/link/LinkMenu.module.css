@@ -1,0 +1,30 @@
+.li {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+.li > svg {
+  margin-right: 23px;
+}
+.liActive {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+.liActive > svg {
+  margin-right: 23px;
+}
+
+.liActive a {
+  color: var(--violet-color);
+}
+
+.li:last-child {
+  margin-bottom: 0;
+}

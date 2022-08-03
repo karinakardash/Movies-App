@@ -1,0 +1,30 @@
+.optionsItem {
+  width: 50%;
+  border-radius: 10px 0 0 10px;
+  background-color: var(--button-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  margin-right: 1px;
+  cursor: pointer;
+}
+.wrapper {
+  background-color: var(--background-color);
+  padding: 162px 62px 64px 368px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 40px;
+}
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

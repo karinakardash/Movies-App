@@ -1,0 +1,8 @@
+.wrapper {
+  background-color: var(--background-color);
+  padding: 152px 62px 64px 368px;
+  min-height: 100vh;
+}
+.listContainer {
+  display: flex;
+}
