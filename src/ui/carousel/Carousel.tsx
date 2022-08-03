@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Flickity from "react-flickity-component";
 
 import { IMovie } from "../../features/all-films/types";
@@ -19,19 +19,13 @@ type CarouselProps = {
 };
 
 export const Carousel: React.FC<CarouselProps> = ({ title, items, genres }) => {
-  let flkty = null;
+  //   let flkty = null;
 
   const flickityOptions = {
     accessibility: false,
-    //freeScroll: true,
-    //contain: true,
     cellAlign: "left",
     prevNextButtons: true,
     pageDots: false,
-    // freeScrollFriction: 0.2,
-    // selectedAttraction: 0.01,
-    // friction: 0.15,
-    // resize: true,
   };
 
   return (
@@ -39,11 +33,10 @@ export const Carousel: React.FC<CarouselProps> = ({ title, items, genres }) => {
       <div className={styles.heading}>
         <h3 className={styles.title}>{title}</h3>
       </div>
-      {/* <div className={styles.wrapper}> */}
       <Flickity
         className={styles.slider}
         options={flickityOptions}
-        flickityRef={(ref) => (flkty = ref)}
+        // flickityRef={(ref) => (flkty = ref)}
       >
         {items &&
           items.map((film) => {
@@ -63,7 +56,6 @@ export const Carousel: React.FC<CarouselProps> = ({ title, items, genres }) => {
             );
           })}
       </Flickity>
-      {/* </div> */}
     </section>
   );
 };

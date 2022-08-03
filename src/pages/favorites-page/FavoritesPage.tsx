@@ -11,6 +11,7 @@ import { LinkButtons } from "../../types";
 import { MainButton } from "../../ui/button/MainButton";
 import { Sidebar } from "../../ui/sidebar/Sidebar";
 import styles from "./FavoritesPage.module.css";
+import { actions } from "../../features/all-films/allFilmsSlice";
 
 const LINKS_LIST = Object.values(LinkButtons);
 
@@ -31,20 +32,13 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllMoviesStart({ page: page }));
-  }, [dispatch, page]);
-
-  useEffect(() => {
+    dispatch(actions.clearMoviesState());
     dispatch(fetchMovieGenresStart());
   }, [dispatch]);
 
-  //   useEffect(() => {
-  //     dispatch(fetchTrendMoviesStart({ page: page }));
-  //   }, [dispatch]);
-
   useEffect(() => {
-    dispatch(fetchSearchContentStart({ query: query, page: page }));
-  }, [dispatch, query, page]);
+    dispatch(fetchAllMoviesStart({ page: page }));
+  }, [dispatch, page]);
 
   const displayFavoriteFilms = (film: IMovie) => favorites[film.id];
   const favoritesMoviesList = allFilms
@@ -54,7 +48,12 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
     <>
       <Header
         onInput={(e) => {
-          setQuery(e.currentTarget.value);
+          dispatch(
+            fetchSearchContentStart({
+              query: e.currentTarget.value,
+              page: page,
+            })
+          );
         }}
       />
       <Sidebar

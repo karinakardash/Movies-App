@@ -37,6 +37,7 @@ export const SelectedFilmContainer: React.FC<SelectedFilmContainerProps> = ({
           </div>
           <div className={styles.options}>
             <FilmBookmark id={id} />
+
             {/* {Bookmark ? <Bookmark id={id} /> : null} */}
             <div className={styles.optionsItem}>
               <svg

@@ -14,14 +14,13 @@
   padding: 162px 62px 64px 368px;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow-x: hidden;
 }
 .listContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 40px;
+  /* justify-content: space-between; */
+  gap: 40px;
 }
 .button {
   display: flex;

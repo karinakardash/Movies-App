@@ -1,5 +1,4 @@
 import { API_IMAGE_PATH } from "../api/config";
-import { IGenre } from "../features/genres/types";
 
 export const buildImagePath = (
   url: string | null | undefined,
