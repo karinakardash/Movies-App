@@ -8,6 +8,7 @@ import { recommendationsReducer } from "./features/recommendations";
 import { searchReducer } from "./features/search";
 import { selectedFilmReducer } from "./features/selected-film/selectedFilmSlice";
 import { trendFilmsReducer } from "./features/trend-films";
+import { userReducer } from "./features/user";
 import { rootSaga } from "./sagas";
 
 let sagaMiddleware = createSagaMiddleware();
@@ -20,6 +21,7 @@ export const allReducers = combineReducers({
   selectedFilm: selectedFilmReducer,
   recommendations: recommendationsReducer,
   favoritesFilm: favoritesReducer,
+  user: userReducer,
 });
 export const store = configureStore({
   reducer: allReducers,

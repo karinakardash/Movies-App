@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { FavoritesPage } from "./pages/favorites-page/FavoritesPage";
 import { HomePage } from "./pages/home-page/HomePage";
+import { LoginPage } from "./pages/login-page/LoginPage";
+import { RegistrationPage } from "./pages/registration-page/RegistrationPage";
 import { SelectedFilmPage } from "./pages/selected-film-page/SelectedFilmPage";
 import { TrendPage } from "./pages/trend-page/TrendPage";
 import { AppPages } from "./types";
@@ -18,6 +20,11 @@ function App() {
           element={<SelectedFilmPage />}
         ></Route>
         <Route path={AppPages.FAVORITES} element={<FavoritesPage />}></Route>
+        <Route path={AppPages.LOGIN} element={<LoginPage />}></Route>
+        <Route
+          path={AppPages.REGISTRATION}
+          element={<RegistrationPage />}
+        ></Route>
       </Routes>
     </div>
   );

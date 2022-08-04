@@ -25,7 +25,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
   const favorites = useAppSelector((state) => state.favoritesFilm);
   const allMovies = useAppSelector((state) => state.allFilms.allFilms);
   const allgenres = useAppSelector((state) => state.genres.genres);
-  //   const trendFilms = useAppSelector((state) => state.trendFilms.trendFilms);
+  const trendFilms = useAppSelector((state) => state.trendFilms.trendFilms);
 
   let allFilms = searchhList.length > 0 ? searchhList : allMovies;
 
@@ -40,10 +40,22 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
     dispatch(fetchAllMoviesStart({ page: page }));
   }, [dispatch, page]);
 
-  const displayFavoriteFilms = (film: IMovie) => favorites[film.id];
-  const favoritesMoviesList = allFilms
+  const displayFavoriteFilms = (film: IMovie) =>
+    favorites[film.id]?.state === true;
+
+  const favoritesMoviesListfromAllFilms = allFilms
     ? allFilms.filter(displayFavoriteFilms)
-    : null;
+    : [];
+
+  const favoritesMoviesListfromTrendsFilms = trendFilms
+    ? trendFilms.filter(displayFavoriteFilms)
+    : [];
+
+  const favoriteMoviesFullList = [
+    ...favoritesMoviesListfromAllFilms,
+    ...favoritesMoviesListfromTrendsFilms,
+  ];
+
   return (
     <>
       <Header
@@ -62,10 +74,10 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
         onLinkClick={setSelectedLink}
       />
       <div className={styles.wrapper}>
-        {favoritesMoviesList ? (
+        {favoriteMoviesFullList ? (
           <div className={styles.listContainer}>
             <AllFilmsList
-              allFilms={favoritesMoviesList}
+              allFilms={favoriteMoviesFullList}
               genres={allgenres}
             ></AllFilmsList>
           </div>
@@ -209,7 +221,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
             {/* <img src="emptyfavorites.png" alt="" /> */}
           </div>
         )}
-        {favoritesMoviesList && favoritesMoviesList.length > 20 ? (
+        {favoriteMoviesFullList && favoriteMoviesFullList.length > 20 ? (
           <MainButton
             className={styles.button}
             onClick={(e) => {

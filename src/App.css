@@ -7,12 +7,16 @@
   --background-color: #ffffff;
   --input-background-color: #ffffff;
   --rating-background-color: #00a340;
+  --form-background-color: #ffffff;
+  --input-border-color: #afb2b6;
 }
 @media (prefers-color-scheme: dark) {
   #root {
     --background-color: #000000;
     --primary-text-color: #ffffff;
     --input-background-color: #323537;
+    --form-background-color: #242426;
+    --input-border-color: #323537;
   }
 }
 

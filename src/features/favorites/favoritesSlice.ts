@@ -18,24 +18,5 @@ const favoritesSlice = createSlice({
   },
 });
 
-// const favoritesSlice = createSlice({
-//   name: "favoriteMovies",
-//   initialState: { favoriteMovies: [] } as { favoriteMovies: IMovie[] },
-//   reducers: {
-//     saveFavoriteMovie: (state, action: { payload: IMovie }) => {
-//       state.favoriteMovies = [...state.favoriteMovies, action.payload];
-//     },
-
-//     deleteFavoriteMovie: (state, action: { payload: number }) => {
-//       const newFavoriteMovies = [...state.favoriteMovies];
-//       const movieIndex = newFavoriteMovies.findIndex(
-//         (movie) => movie.id === action.payload
-//       );
-//       newFavoriteMovies.splice(movieIndex, 1);
-//       state.favoriteMovies = newFavoriteMovies;
-//     },
-//   },
-// });
-
 export const { actions } = favoritesSlice;
 export const favoritesReducer = favoritesSlice.reducer;

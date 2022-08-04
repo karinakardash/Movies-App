@@ -10,6 +10,8 @@ export enum AppPages {
   TRENDS = "/trends",
   FILM_PAGE = "/home/movie",
   FAVORITES = "/favorites",
+  LOGIN = "/login",
+  REGISTRATION = "/registration",
 }
 
 export enum FetchStatus {
