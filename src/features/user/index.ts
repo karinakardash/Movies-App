@@ -1,3 +1,3 @@
 import { actions } from "./userSlice";
 export { userReducer } from "./userSlice";
-export const { setUser, removeUser } = actions;
+export const { setUser, removeUser, setUserName } = actions;

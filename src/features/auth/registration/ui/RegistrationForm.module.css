@@ -2,22 +2,22 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  margin-top: 24px;
+  margin-top: 20px;
   color: var(--primary-text-color);
   display: block;
 }
 .input {
   display: block;
   background-color: var(--input-background-color);
-  color: #ffffff;
+  color: var(--primary-text-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  padding: 14px;
+  padding: 12px;
   width: 100%;
   border: 2px solid var(--input-border-color);
   border-radius: 10px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 .input::placeholder {
   color: var(--menu-text-color);
@@ -30,12 +30,6 @@
   font-size: 14px;
   line-height: 24px;
   color: var(--menu-text-color);
-  margin-top: 8px;
+  margin-top: 6px;
   display: block;
-}
-
-@media (max-width: 767px) {
-  .label {
-    margin-top: 20px;
-  }
 }

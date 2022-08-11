@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  name:null,
   email: null,
   token: null,
   id: null,
@@ -20,6 +21,9 @@ const userSlice = createSlice({
       state.token = null;
       state.id = null;
     },
+    setUserName(state, action){
+      state.name = action.payload.name;
+    }
   },
 });
 

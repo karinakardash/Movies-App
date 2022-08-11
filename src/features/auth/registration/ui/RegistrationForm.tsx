@@ -6,7 +6,7 @@ import styles from "./RegistrationForm.module.css";
 
 type RegistrationFormProps = {
   className?: string;
-  handleClick: (email: string, password: string) => void;
+  handleClick: (name:string, email: string, password: string) => void;
 };
 
 export const RegistrationForm: React.FC<RegistrationFormProps> = ({
@@ -61,7 +61,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
       </label>
       <FormButton
         className={styles.button}
-        onClick={() => handleClick(email, password)}
+        onClick={(e) => {e.preventDefault(); handleClick(name, email, password)}}
       >
         Sign up
       </FormButton>

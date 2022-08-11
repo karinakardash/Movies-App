@@ -43,7 +43,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
       </Link>
       <FormButton
         className={styles.button}
-        onClick={() => handleClick(email, password)}
+        onClick={(e) => {e.preventDefault(); handleClick(email, password)}}
       >
         Log in
       </FormButton>
