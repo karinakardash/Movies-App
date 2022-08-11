@@ -22,13 +22,13 @@ export const RegistrationPage: React.FC<RegistrationPageProprs> = () => {
             token: user.refreshToken,
           })     
         );
-        dispatch(
-          setUserName({
-            name:name,
-          })
-        );
         navigate(AppPages.LOGIN);
       })
+      dispatch(
+        setUserName({
+          name:name,
+        })
+      );
   };
 
   return (

@@ -4,19 +4,28 @@ import styles from "./Profile.module.css";
 
 type ProfileProps = {
   className?: string;
-  userName:string;
-  userEmail:string;
+  // userName:string;
+  // userEmail:string;
+  onChangeName:(e:any) => void;
+  onChangeEmail:(e:any) => void;
+  nameValue: string;
+  emailValue:string;
+
 //   handleClick: (name:string, email: string, password: string) => void;
 };
 
 export const Profile: React.FC<ProfileProps> = ({
 //   handleClick,
   className = "",
-  userName,
-  userEmail
+  // userName,
+  // userEmail,
+  nameValue,
+  emailValue,
+  onChangeEmail,
+  onChangeName
 }) => {
-  const [name, setName] = useState(userName);
-  const [email, setEmail] = useState(userEmail);
+  // const [name, setName] = useState(userName);
+  // const [email, setEmail] = useState(userEmail);
 
   return (
     <>
@@ -27,8 +36,8 @@ export const Profile: React.FC<ProfileProps> = ({
         <input
           className={styles.input}
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={nameValue}
+          onChange={onChangeName}
           placeholder="Your name"
         />
       </label>
@@ -37,8 +46,8 @@ export const Profile: React.FC<ProfileProps> = ({
         <input
           className={styles.input}
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={emailValue}
+          onChange={onChangeEmail}
           placeholder="Your email"
         />
       </label>
