@@ -6,9 +6,9 @@ import styles from "./RegistrationPage.module.css";
 import { useAppDispatch } from "../../hooks";
 import { setUser, setUserName } from "../../features/user";
 
-type RegistrationPageProps = {};
+type RegistrationPageProprs = {};
 
-export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
+export const RegistrationPage: React.FC<RegistrationPageProprs> = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const handleRegistration = (name: string, email: string, password: string) => {

@@ -8,6 +8,7 @@ import { NewPasswordPage } from "./pages/new-password-page/NewPasswordPage";
 import { RegistrationPage } from "./pages/registration-page/RegistrationPage";
 import { ResetPasswordPage } from "./pages/reset-page/ResetPasswordPage";
 import { SelectedFilmPage } from "./pages/selected-film-page/SelectedFilmPage";
+import { SettingsPage } from "./pages/settings-page/SettingsPage";
 import { TrendPage } from "./pages/trend-page/TrendPage";
 import { AppPages } from "./types";
 
@@ -34,6 +35,10 @@ function App() {
           <Route
           path={AppPages.NEW_PASSWORD}
           element={<NewPasswordPage />}
+        ></Route>
+          <Route
+          path={AppPages.SETTINGS}
+          element={<SettingsPage />}
         ></Route>
       </Routes>
     </div>

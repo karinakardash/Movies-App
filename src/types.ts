@@ -13,7 +13,8 @@ export enum AppPages {
   LOGIN = "/login",
   REGISTRATION = "/registration",
   RESET_PASSWORD = "/reset-password",
-  NEW_PASSWORD = "/set-new-password"
+  NEW_PASSWORD = "/set-new-password",
+  SETTINGS = "/settings",
 }
 
 export enum FetchStatus {

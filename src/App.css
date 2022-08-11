@@ -9,6 +9,8 @@
   --rating-background-color: #00a340;
   --form-background-color: #ffffff;
   --input-border-color: #afb2b6;
+  --button-text-color: #ffffff;
+  --form-border-color:#afb2b6;
 }
 @media (prefers-color-scheme: dark) {
   #root {
@@ -16,8 +18,10 @@
     --primary-text-color: #ffffff;
     --input-background-color: #323537;
     --form-background-color: #242426;
+    --form-border-color:#242426;
     --input-border-color: #323537;
     --button-background-color: #AFB2B6;
+    --button-text-color: #ffffff;
   }
 }
 
