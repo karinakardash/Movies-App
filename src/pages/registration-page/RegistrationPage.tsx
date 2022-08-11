@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { RegistrationForm } from "../../features/auth/registration/ui/RegistrationForm";
+import { RegistrationForm } from "../../features/auth/registration/RegistrationForm";
 import { AppPages } from "../../types";
 import { getAuth, createUserWithEmailAndPassword  } from "firebase/auth";
 import styles from "./RegistrationPage.module.css";

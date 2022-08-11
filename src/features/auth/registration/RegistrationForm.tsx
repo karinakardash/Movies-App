@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AppPages } from "../../../../types";
-import { FormButton } from "../../../../ui/formButton/FormButton";
+import { AppPages } from "../../../types";
+import { FormButton } from "../../../ui/formButton/FormButton";
 import styles from "./RegistrationForm.module.css";
 
 type RegistrationFormProps = {

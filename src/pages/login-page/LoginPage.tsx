@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { LoginForm } from "../../features/auth/login/ui/LoginForm";
+import { LoginForm } from "../../features/auth/login/LoginForm";
 import { AppPages } from "../../types";
 import styles from "./LoginPage.module.css";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";

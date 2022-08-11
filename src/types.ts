@@ -12,6 +12,8 @@ export enum AppPages {
   FAVORITES = "/favorites",
   LOGIN = "/login",
   REGISTRATION = "/registration",
+  RESET_PASSWORD = "/reset-password",
+  NEW_PASSWORD = "/set-new-password"
 }
 
 export enum FetchStatus {

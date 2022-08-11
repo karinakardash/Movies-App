@@ -4,7 +4,9 @@ import "./App.css";
 import { FavoritesPage } from "./pages/favorites-page/FavoritesPage";
 import { HomePage } from "./pages/home-page/HomePage";
 import { LoginPage } from "./pages/login-page/LoginPage";
+import { NewPasswordPage } from "./pages/new-password-page/NewPasswordPage";
 import { RegistrationPage } from "./pages/registration-page/RegistrationPage";
+import { ResetPasswordPage } from "./pages/reset-page/ResetPasswordPage";
 import { SelectedFilmPage } from "./pages/selected-film-page/SelectedFilmPage";
 import { TrendPage } from "./pages/trend-page/TrendPage";
 import { AppPages } from "./types";
@@ -24,6 +26,14 @@ function App() {
         <Route
           path={AppPages.REGISTRATION}
           element={<RegistrationPage />}
+        ></Route>
+         <Route
+          path={AppPages.RESET_PASSWORD}
+          element={<ResetPasswordPage />}
+        ></Route>
+          <Route
+          path={AppPages.NEW_PASSWORD}
+          element={<NewPasswordPage />}
         ></Route>
       </Routes>
     </div>
