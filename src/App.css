@@ -2,7 +2,7 @@
   --menu-text-color: #80858b;
   --violet-color: #7b61ff;
   --secondary-text-color: #afb2b6;
-  --button-background-color: #323537;
+  --button-background-color: #AFB2B6;
   --primary-text-color: #242426;
   --background-color: #ffffff;
   --input-background-color: #ffffff;
@@ -20,7 +20,7 @@
     --form-background-color: #242426;
     --form-border-color:#242426;
     --input-border-color: #323537;
-    --button-background-color: #AFB2B6;
+    --button-background-color: #323537;
     --button-text-color: #ffffff;
   }
 }

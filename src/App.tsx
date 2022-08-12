@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import { AppContext } from "./AppContext";
 import { FavoritesPage } from "./pages/favorites-page/FavoritesPage";
 import { HomePage } from "./pages/home-page/HomePage";
 import { LoginPage } from "./pages/login-page/LoginPage";
@@ -13,8 +14,10 @@ import { TrendPage } from "./pages/trend-page/TrendPage";
 import { AppPages } from "./types";
 
 function App() {
+  const appRef = React.createRef<HTMLDivElement>();
   return (
-    <div className="App">
+    <div className="App" ref={appRef}>
+       <AppContext.Provider value={appRef}>
       <Routes>
         <Route path={AppPages.HOME} element={<HomePage></HomePage>}></Route>
         <Route path={AppPages.TRENDS} element={<TrendPage></TrendPage>}></Route>
@@ -41,6 +44,7 @@ function App() {
           element={<SettingsPage />}
         ></Route>
       </Routes>
+      </AppContext.Provider>
     </div>
   );
 }
