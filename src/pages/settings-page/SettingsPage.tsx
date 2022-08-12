@@ -4,13 +4,13 @@ import { Header } from "../../features/header/Header";
 import { fetchSearchContentStart, reset } from "../../features/search";
 import { Password } from "../../features/settings/password/Password";
 import { Profile } from "../../features/settings/profile/Profile";
-import { setUserName } from "../../features/user";
+import { setUser, setUserName } from "../../features/user";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 import { LinkButtons } from "../../types";
 import { FormButton } from "../../ui/formButton/FormButton";
 import { Sidebar } from "../../ui/sidebar/Sidebar";
 import styles from "./SettingsPage.module.css";
-import { getAuth, updateEmail, updatePassword } from "firebase/auth";
+import { getAuth, updateEmail, updatePassword, updateProfile } from "firebase/auth";
 import { ColorMode } from "../../features/settings/color-mode/ColorMode";
 import { AppContext } from "../../AppContext";
 
@@ -39,29 +39,35 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
   const handleSettingsSave = (name: string, email: string, newPassword:string) => {
     const auth = getAuth();
     const user = auth.currentUser;
-    console.log(user)
-    // if(user){
-    //   updateEmail(user, email).then(() => {
-    //     // Email updated!
-    //     // ...
-    //   }).catch((error) => {
-    //     console.log(error)
-    //   });
-    // };
+    if(user){
+      updateEmail(user, email).then(() => {
+      console.log("Email updated")
+      }).catch((error) => {
+        console.log(error)
+      });
+
+      updateProfile(user, {
+        displayName:name
+      }).then(() => {
+        dispatch(
+          setUser({
+            email: user.email,
+            name:user.displayName
+          }))
+        console.log("Name updated")
+      }).catch((error) => {
+        console.log(error)
+      });
+    };
 
     if(user && newPassword){
       updatePassword(user, newPassword).then(() => {
-        // Update successful.
+        console.log("Password updated")
       }).catch((error) => {
         // setIsPasswordError(true)
         console.log(error)
       });
     }
-      dispatch(
-        setUserName({
-          name:name,
-        })
-      );
   };
 
   return (

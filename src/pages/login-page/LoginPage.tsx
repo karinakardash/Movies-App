@@ -22,6 +22,7 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
             email: user.email,
             id: user.uid,
             token: user.refreshToken,
+            name: user.displayName,
           })
         );
         navigate(AppPages.HOME);

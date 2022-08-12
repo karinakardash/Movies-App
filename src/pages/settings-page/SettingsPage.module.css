@@ -11,3 +11,17 @@
   color:darkred;
   margin-top: 8px;
 }
+.buttons{
+  display: flex;
+}
+.cancel, .save{
+  max-width: 266px;
+  width: 100%;
+}
+.cancel{
+  background-color: var(--form-background-color);
+  margin: 0 0 0 auto;
+}
+.save{
+  margin: 0 0 0 40px;
+}

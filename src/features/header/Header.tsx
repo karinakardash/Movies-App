@@ -1,3 +1,4 @@
+import { useAppSelector } from "../../hooks";
 import { Username } from "../../ui/username/Username";
 import { Searchbar } from "../search/searchbar/Searchbar";
 import styles from "./Header.module.css";
@@ -7,6 +8,7 @@ type HeaderProps = {
 };
 
 export const Header: React.FC<HeaderProps> = ({ onInput }) => {
+  const userName = useAppSelector((state)=> state.user.name) ?? "";
   return (
     <header className={styles.header}>
       <div className="container container-flex">
@@ -45,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({ onInput }) => {
           </svg>
         </div>
         <Searchbar onInput={onInput}></Searchbar>
-        <Username children="Karina Kushnir" />
+        <Username children={userName} />
       </div>
     </header>
   );
