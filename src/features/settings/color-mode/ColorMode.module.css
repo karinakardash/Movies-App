@@ -1,0 +1,92 @@
+.title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: var(--primary-text-color);
+    margin-bottom: 16px;
+}
+
+.form {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--form-background-color);
+    border: 2px solid var(--form-border-color);
+    padding: 40px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 38px;
+  }
+.label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--primary-text-color);
+  }
+
+  .text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var( --secondary-text-color);
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 20px;
+  }
+  
+  .switchInput {
+    opacity: 0;
+  }
+  
+  .switchSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--violet-color);
+    transition: all 0.4s linear;
+    border-radius: 10px;
+  }
+  
+  .switchSlider::before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: all 0.4s linear;
+    border-radius: 50%;
+  }
+  
+  .switchInput:checked + .switchSlider::before {
+            transform: translateX(12px);
+  }
+  
+  @media (max-width: 767px) {
+    .title{
+        margin-bottom: 18px;
+    }
+    .form {
+        display: block;
+        gap: 0;
+        padding: 24px;
+        margin-bottom: 32px;
+      }
+      .label {
+        margin-top: 20px;
+      }
+      .label:first-child {
+        margin-top: 0;
+      }
+    }

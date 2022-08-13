@@ -1,0 +1,24 @@
+.sidebar {
+  width: 100%;
+  max-width: 368px;
+  background-color: var(--background-color);
+  height: 100vh;
+  position: fixed;
+  top: 96px;
+  left: 0;
+  padding: 46px 10px 10px 62px;
+}
+.li {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 40px;
+  text-decoration: none;
+}
+
+.liActive a {
+  color: var(--violet-color);
+}
+
+.li:last-child {
+  margin-bottom: 0;
+}

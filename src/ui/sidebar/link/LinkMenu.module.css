@@ -1,0 +1,64 @@
+.li {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.li > svg {
+  margin-right: 23px;
+  width: 20px;
+  height: 20px;
+}
+.li > svg path {
+  transition: all 0.3s linear;
+}
+.liActive > svg path {
+  transition: all 0.3s linear;
+}
+
+.liActive {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s linear;
+}
+.liActive > svg {
+  margin-right: 23px;
+  width: 20px;
+  height: 20px;
+  fill: var(--violet-color);
+}
+.liActive > svg path {
+  fill: var(--violet-color);
+}
+.liActive a {
+  color: var(--violet-color);
+  transition: all 0.3s linear;
+}
+.li a{
+  transition: all 0.3s linear;
+}
+.li:last-child {
+  margin-bottom: 0;
+}
+
+.li:hover a{
+  color: var(--violet-color);
+  cursor: pointer;
+}
+.li:hover > svg path {
+  fill: var(--violet-color);
+}
+
+.li:disabled{
+  color: var(--button-background-color);
+}
+.li:disabled > svg path {
+  fill:var(--button-background-color);
+}

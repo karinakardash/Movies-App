@@ -1,0 +1,17 @@
+.wrapper {
+  background-color: var(--background-color);
+  padding: 162px 62px 64px 368px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.listContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 40px;
+}
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

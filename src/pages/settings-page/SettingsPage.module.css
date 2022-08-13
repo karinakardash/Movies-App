@@ -1,0 +1,30 @@
+.wrapper {
+  background-color: var(--background-color);
+  padding: 162px 62px 64px 368px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.containerText{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color:darkred;
+  margin-top: 8px;
+}
+.buttons{
+  display: flex;
+}
+.cancel, .save{
+  max-width: 266px;
+  width: 100%;
+}
+.cancel{
+  background-color: var(--form-background-color);
+  margin: 0 0 0 auto;
+}
+.save{
+  margin: 0 0 0 40px;
+}
+.settingsBox{
+  width:80%;
+}

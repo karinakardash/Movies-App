@@ -1,0 +1,85 @@
+#root {
+  --menu-text-color: #80858b;
+  --violet-color: #7b61ff;
+  --secondary-text-color: #afb2b6;
+  --button-background-color: #AFB2B6;
+  --primary-text-color: #242426;
+  --background-color: #ffffff;
+  --input-background-color: #ffffff;
+  --rating-background-color: #00a340;
+  --form-background-color: #ffffff;
+  --input-border-color: #afb2b6;
+  --button-text-color: #ffffff;
+  --form-border-color:#afb2b6;
+}
+@media (prefers-color-scheme: dark) {
+  #root {
+    --background-color: #000000;
+    --primary-text-color: #ffffff;
+    --input-background-color: #323537;
+    --form-background-color: #242426;
+    --form-border-color:#242426;
+    --input-border-color: #323537;
+    --button-background-color: #323537;
+    --button-text-color: #ffffff;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--menu-text-color);
+}
+
+body,
+html {
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 62px;
+}
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flickity-button {
+  display: block;
+  position: absolute;
+  top: 12px;
+  width: 16px;
+  background-color: none;
+  transition: all 0.25s ease;
+  fill: var(--primary-text-color);
+  z-index: 2;
+  background-color: var(--background-color);
+  border: none;
+  cursor: pointer;
+}
+
+.flickity-button.previous {
+  right: 30px;
+}
+
+.flickity-button.next {
+  right: 0;
+}
+
+.flickity-button:disabled {
+  fill: var(--secondary-text-color);
+}
+
+.flickity-button svg {
+  width: 100%;
+}
