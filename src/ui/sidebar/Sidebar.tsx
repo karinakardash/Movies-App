@@ -72,6 +72,7 @@ type SidebarProps = {
   links: LinkButtons[];
   selectedLink: LinkButtons;
   onLinkClick: (selectedLink: LinkButtons) => void;
+  className?: string;
 };
 
 export const Sidebar: React.FC<SidebarProps> = ({

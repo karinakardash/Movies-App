@@ -53,3 +53,9 @@
 .cardBox{
   position: relative;
 }
+
+@media (max-width:600px){
+  .cardBox {
+    margin-bottom: 32px;
+  }
+}

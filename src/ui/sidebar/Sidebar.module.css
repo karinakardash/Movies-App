@@ -22,3 +22,22 @@
 .li:last-child {
   margin-bottom: 0;
 }
+
+@media (max-width:1250px){
+  .sidebar {
+    max-width: 300px;
+    padding: 46px 10px 10px 40px;
+  }
+}
+
+@media (max-width:1130px){
+  .sidebar {
+    max-width: 240px;
+  }
+}
+
+@media (max-width:1024px){
+  .sidebar {
+  display: none;
+  }
+}

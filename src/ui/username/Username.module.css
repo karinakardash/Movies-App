@@ -2,11 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 260px;
+  order: 1;
 }
 .visual {
-  width: 56px;
+  min-width: 56px;
   height: 56px;
   background-color: var(--violet-color);
   border-radius: 10px;

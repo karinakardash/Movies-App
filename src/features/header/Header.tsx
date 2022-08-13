@@ -1,18 +1,22 @@
+import { useState } from "react";
 import { useAppSelector } from "../../hooks";
 import { SignIn } from "../../ui/sign-in/SignIn";
 import { Username } from "../../ui/username/Username";
 import { Searchbar } from "../search/searchbar/Searchbar";
+import { Burger } from "./burger/Burger";
 import styles from "./Header.module.css";
+import { Menu } from "./menu/Menu";
 
 type HeaderProps = {
   onInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const Header: React.FC<HeaderProps> = ({ onInput }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const userName = useAppSelector((state)=> state.user.name) ?? "";
   return (
     <header className={styles.header}>
-      <div className="container container-flex">
+      <div className={styles.container}>
         <div className={styles.logo}>
           <svg
             width="158"
@@ -47,8 +51,10 @@ export const Header: React.FC<HeaderProps> = ({ onInput }) => {
             />
           </svg>
         </div>
+          {userName?  <Username children={userName} /> : <SignIn/>}
+          <Burger onClick={() => setIsOpen(!isOpen)} >
+          </Burger>
         <Searchbar onInput={onInput}></Searchbar>
-        {userName?  <Username children={userName} /> : <SignIn/>}
       </div>
     </header>
   );

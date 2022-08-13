@@ -4,9 +4,10 @@
     align-items: center;
     width: 100%;
     max-width: 260px;
+    order: 1;
   }
   .visual {
-    width: 90px;
+    min-width: 56px;
     height: 56px;
     background-color: var(--violet-color);
     border-radius: 10px;
@@ -23,3 +24,19 @@
     width: 100%;
   }
   
+  @media (max-width:1130px){
+    .box {
+      max-width: 200px;
+    }
+  }
+
+  @media (max-width:1024px){
+    .box {
+      margin-right: 40px;
+    }
+  }
+  @media (max-width:870px){
+    .box {
+        max-width: 260px;
+    }
+  }

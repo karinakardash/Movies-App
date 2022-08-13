@@ -2,3 +2,43 @@
   max-width: 266px;
   width: 100%;
 }
+
+@media (max-width:1057px){
+  .cardBox {
+    max-width: 236px;
+  }
+}
+@media (max-width:1024px){
+  .cardBox {
+    max-width: 208px;
+  }
+}
+
+@media (max-width:767px){
+  .cardBox {
+    max-width: 236px;
+  }
+}
+
+@media (max-width:767px){
+  .cardBox {
+    max-width: 236px;
+  }
+}
+
+@media (max-width:755px){
+  .cardBox {
+    max-width: 208px;
+  }
+}
+
+@media (max-width:671px){
+  .cardBox {
+    max-width: 272px;
+  }
+}
+@media (max-width:600px){
+  .cardBox {
+    margin-bottom: 32px;
+  }
+}

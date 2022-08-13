@@ -78,15 +78,6 @@
         margin-bottom: 18px;
     }
     .form {
-        display: block;
-        gap: 0;
         padding: 24px;
-        margin-bottom: 32px;
-      }
-      .label {
-        margin-top: 20px;
-      }
-      .label:first-child {
-        margin-top: 0;
-      }
     }
+}

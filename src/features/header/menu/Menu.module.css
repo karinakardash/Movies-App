@@ -1,0 +1,9 @@
+.nav{
+    width: 100%;
+    padding: 100px 40px;
+    background-color: var(--background-color);
+    position: relative;
+    left: 50%;
+    transform: translate(-70px, 0);
+}
+
