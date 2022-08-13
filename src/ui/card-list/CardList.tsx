@@ -26,8 +26,9 @@ export const CardList: React.FC<CardListProps> = ({ data, genres }) => {
           <Card
             id={film.id}
             image={buildImagePath(film.poster_path, "w780")}
-            type={returnGenres(film.genre_ids, genres)}
+            type={returnGenres(film.genre_ids, genres).slice(0,3)}
             title={film.title}
+            vote_average={film.vote_average}
             Bookmarker={FilmBookmark}
           ></Card>
         </Link>

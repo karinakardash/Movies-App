@@ -1,3 +1,4 @@
 .cardBox {
-  width: calc((100% - 120px) / 4);
+  max-width: 266px;
+  width: 100%;
 }

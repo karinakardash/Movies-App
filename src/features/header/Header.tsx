@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../hooks";
+import { SignIn } from "../../ui/sign-in/SignIn";
 import { Username } from "../../ui/username/Username";
 import { Searchbar } from "../search/searchbar/Searchbar";
 import styles from "./Header.module.css";
@@ -47,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ onInput }) => {
           </svg>
         </div>
         <Searchbar onInput={onInput}></Searchbar>
-        <Username children={userName} />
+        {userName?  <Username children={userName} /> : <SignIn/>}
       </div>
     </header>
   );

@@ -89,6 +89,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
         onLinkClick={setSelectedLink}
       />
       <div className={styles.wrapper}>
+        <div className={styles.settingsBox}>
        <Profile nameValue={name} emailValue={email} onChangeName={(e) => setName(e.target.value)} onChangeEmail={(e) => setEmail(e.target.value)}></Profile>
        <Password newPassword={newPassword} setNewPassword={(e) => setNewPassword(e.target.value)}
  ></Password>
@@ -128,6 +129,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
         >
           Save
           </FormButton>
+          </div>
           </div>
       </div>
     </>

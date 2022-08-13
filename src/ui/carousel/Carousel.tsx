@@ -47,6 +47,7 @@ export const Carousel: React.FC<CarouselProps> = ({ title, items, genres }) => {
                 className={styles.cardBox}
               >
                 <Card
+                  vote_average={film.vote_average}
                   id={film.id}
                   image={buildImagePath(film.poster_path, "w780")}
                   type={returnGenres(film.genre_ids, genres)}
