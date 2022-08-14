@@ -73,15 +73,15 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
   return (
     <>
       <Header
-        onInput={(e) => {
-          dispatch(
-            fetchSearchContentStart({
-              query: e.currentTarget.value,
-              page: page,
-            })
+        // onInput={(e) => {
+        //   dispatch(
+        //     fetchSearchContentStart({
+        //       query: e.currentTarget.value,
+        //       page: page,
+        //     })
 
-          );
-        }}
+        //   );
+        // }}
       />
       <Sidebar
         links={LINKS_LIST}

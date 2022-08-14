@@ -15,6 +15,7 @@ export enum AppPages {
   RESET_PASSWORD = "/reset-password",
   NEW_PASSWORD = "/set-new-password",
   SETTINGS = "/settings",
+  SEARCH = "/movies/search/:query"
 }
 
 export enum FetchStatus {

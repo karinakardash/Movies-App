@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { FetchStatus } from "../../types";
 import { IMovie } from "../all-films/types";
 import { SearchPayload } from "./types";
 
@@ -6,29 +7,25 @@ export const searchSlice = createSlice({
   name: "search",
   initialState: {
     searchList: [],
-    searchQuery: "",
-    searchPage: 1,
-    isLoading: false,
+    fetchStatus: null,
   } as {
     searchList: IMovie[];
-    searchQuery: string;
-    searchPage: number;
-    isLoading: boolean;
+    fetchStatus: FetchStatus | null;
   },
   reducers: {
     fetchSearchContentStart(state, action: { payload: SearchPayload }) {
-      state.isLoading = true;
+      state.fetchStatus = FetchStatus.PENDING;
     },
     fetchSearchContentSuccess(
       state,
       action: { payload: { movies: IMovie[] } }
     ) {
-      state.searchList = action.payload.movies;
-      state.isLoading = false;
+      state.searchList = [...state.searchList, ...action.payload.movies];
+      state.fetchStatus = FetchStatus.SUCCESS;
     },
     fetchSearchContentFailure(state, action: { payload: string }) {
       console.error("searchFailure", action.payload);
-      state.isLoading = false;
+      state.fetchStatus = FetchStatus.FAILURE;
     },
     reset(state) {
       state.searchList = [];

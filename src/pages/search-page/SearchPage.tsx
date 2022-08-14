@@ -1,34 +1,40 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { AllFilmsList } from "../../features/all-films/allFilmsList";
 import { fetchMovieGenresStart } from "../../features/genres";
 import { Header } from "../../features/header/Header";
-import { fetchTrendMoviesStart } from "../../features/trend-films";
-import { TrendFilmsList } from "../../features/trend-films/trendFilmsList";
-import { actions } from "../../features/trend-films/trendFilmsSlice";
+import { fetchSearchContentStart, reset } from "../../features/search";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 import { LinkButtons } from "../../types";
 import { MainButton } from "../../ui/button/MainButton";
 import { Sidebar } from "../../ui/sidebar/Sidebar";
-import styles from "./TrendPage.module.css";
+import styles from "./SearchPage.module.css";
 
 const LINKS_LIST = Object.values(LinkButtons);
-type TrendPageProps = {};
 
-export const TrendPage: React.FC<TrendPageProps> = () => {
-  const [selectedLink, setSelectedLink] = useState(LinkButtons.TRENDS);
-  const [trendPage, setTrendPage] = useState(1);
+type SearchPageProps = {};
+
+export const SearchPage: React.FC<SearchPageProps> = () => {
+  const [selectedLink, setSelectedLink] = useState(LinkButtons.HOME);
+  const [page, setPage] = useState(1);
+  const searchhList = useAppSelector((state) => state.search.searchList);
   const allgenres = useAppSelector((state) => state.genres.genres);
-  let trendFilms = useAppSelector((state) => state.trendFilms.trendFilms);
+  const { query = " "} = useParams();
 
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(actions.clearTrendMoviesState());
     dispatch(fetchMovieGenresStart());
   }, []);
 
   useEffect(() => {
-    dispatch(fetchTrendMoviesStart({ page: trendPage }));
-  }, [dispatch, trendPage]);
+   dispatch(
+          fetchSearchContentStart({
+            query: query,
+            page: page,
+          })
+        );
+   }, [query, page]);
 
   return (
     <>
@@ -40,15 +46,12 @@ export const TrendPage: React.FC<TrendPageProps> = () => {
       />
       <div className={styles.wrapper}>
         <div className={styles.listContainer}>
-          <TrendFilmsList
-            trendFilms={trendFilms}
-            genres={allgenres}
-          ></TrendFilmsList>
+          <AllFilmsList allFilms={searchhList} genres={allgenres}></AllFilmsList>
         </div>
         <MainButton
           className={styles.button}
           onClick={(e) => {
-            setTrendPage(trendPage + 1);
+            setPage(page + 1);
           }}
         >
           <p>Show more</p>

@@ -8,10 +8,10 @@ import styles from "./Header.module.css";
 import { Menu } from "./menu/Menu";
 
 type HeaderProps = {
-  onInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  // onInput: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 };
 
-export const Header: React.FC<HeaderProps> = ({ onInput }) => {
+export const Header: React.FC<HeaderProps> = ({ }) => {
   const [isOpen, setIsOpen] = useState(false);
   const userName = useAppSelector((state)=> state.user.name) ?? "";
   return (
@@ -54,7 +54,7 @@ export const Header: React.FC<HeaderProps> = ({ onInput }) => {
           {userName?  <Username children={userName} /> : <SignIn/>}
           <Burger onClick={() => setIsOpen(!isOpen)} >
           </Burger>
-        <Searchbar onInput={onInput}></Searchbar>
+        <Searchbar></Searchbar>
       </div>
     </header>
   );

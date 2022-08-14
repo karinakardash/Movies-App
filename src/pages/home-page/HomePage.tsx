@@ -1,14 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchAllMoviesStart } from "../../features/all-films";
 import { AllFilmsList } from "../../features/all-films/allFilmsList";
 import { actions } from "../../features/all-films/allFilmsSlice";
-import { IMovie } from "../../features/all-films/types";
 import { fetchMovieGenresStart } from "../../features/genres";
 import { Header } from "../../features/header/Header";
-import { fetchSearchContentStart, reset } from "../../features/search";
-import { fetchTrendMoviesStart } from "../../features/trend-films";
 import { useAppSelector, useAppDispatch } from "../../hooks";
-import { FetchStatus, LinkButtons } from "../../types";
+import { LinkButtons } from "../../types";
 import { MainButton } from "../../ui/button/MainButton";
 import { Sidebar } from "../../ui/sidebar/Sidebar";
 import styles from "./HomePage.module.css";
@@ -20,12 +17,8 @@ type HomePageProps = {};
 export const HomePage: React.FC<HomePageProps> = () => {
   const [selectedLink, setSelectedLink] = useState(LinkButtons.HOME);
   const [page, setPage] = useState(1);
-  // const [query, setQuery] = useState("");
-  const searchhList = useAppSelector((state) => state.search.searchList);
-  const allMovies = useAppSelector((state) => state.allFilms.allFilms);
+  const allFilms = useAppSelector((state) => state.allFilms.allFilms);
   const allgenres = useAppSelector((state) => state.genres.genres);
-
-  let allFilms = searchhList.length > 0 ? searchhList : allMovies;
 
   const dispatch = useAppDispatch();
 
@@ -40,16 +33,7 @@ export const HomePage: React.FC<HomePageProps> = () => {
 
   return (
     <>
-      <Header
-        onInput={(e) => {
-          dispatch(
-            fetchSearchContentStart({
-              query: e.currentTarget.value,
-              page: page,
-            })
-          );
-        }}
-      />
+      <Header/>
       <Sidebar
         links={LINKS_LIST}
         selectedLink={selectedLink}

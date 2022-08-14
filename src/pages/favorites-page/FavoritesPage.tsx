@@ -20,14 +20,10 @@ type FavoritesPageProps = {};
 export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
   const [selectedLink, setSelectedLink] = useState(LinkButtons.FAVORITES);
   const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const searchhList = useAppSelector((state) => state.search.searchList);
   const favorites = useAppSelector((state) => state.favoritesFilm);
-  const allMovies = useAppSelector((state) => state.allFilms.allFilms);
+  const allFilms = useAppSelector((state) => state.allFilms.allFilms);
   const allgenres = useAppSelector((state) => state.genres.genres);
   const trendFilms = useAppSelector((state) => state.trendFilms.trendFilms);
-
-  let allFilms = searchhList.length > 0 ? searchhList : allMovies;
 
   const dispatch = useAppDispatch();
 
@@ -58,23 +54,14 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
 
   return (
     <>
-      <Header
-        onInput={(e) => {
-          dispatch(
-            fetchSearchContentStart({
-              query: e.currentTarget.value,
-              page: page,
-            })
-          );
-        }}
-      />
+      <Header/>
       <Sidebar
         links={LINKS_LIST}
         selectedLink={selectedLink}
         onLinkClick={setSelectedLink}
       />
       <div className={styles.wrapper}>
-        {favoriteMoviesFullList ? (
+        {favoriteMoviesFullList.length > 0 ? (
           <div className={styles.listContainer}>
             <AllFilmsList
               allFilms={favoriteMoviesFullList}
@@ -217,8 +204,6 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
                 fill="#80858B"
               />
             </svg>
-
-            {/* <img src="emptyfavorites.png" alt="" /> */}
           </div>
         )}
         {favoriteMoviesFullList && favoriteMoviesFullList.length > 20 ? (

@@ -8,6 +8,7 @@ import { LoginPage } from "./pages/login-page/LoginPage";
 import { NewPasswordPage } from "./pages/new-password-page/NewPasswordPage";
 import { RegistrationPage } from "./pages/registration-page/RegistrationPage";
 import { ResetPasswordPage } from "./pages/reset-page/ResetPasswordPage";
+import { SearchPage } from "./pages/search-page/SearchPage";
 import { SelectedFilmPage } from "./pages/selected-film-page/SelectedFilmPage";
 import { SettingsPage } from "./pages/settings-page/SettingsPage";
 import { TrendPage } from "./pages/trend-page/TrendPage";
@@ -42,6 +43,10 @@ function App() {
           <Route
           path={AppPages.SETTINGS}
           element={<SettingsPage />}
+        ></Route>
+         <Route
+          path={AppPages.SEARCH}
+          element={<SearchPage />}
         ></Route>
       </Routes>
       </AppContext.Provider>
