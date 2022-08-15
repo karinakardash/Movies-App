@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchAllMoviesStart } from "../../features/all-films";
 import { AllFilmsList } from "../../features/all-films/allFilmsList";
 import { actions } from "../../features/all-films/allFilmsSlice";
+import { FilterBar } from "../../features/filters/filterBar/filterBar";
 import { fetchMovieGenresStart } from "../../features/genres";
 import { Header } from "../../features/header/Header";
 import { useAppSelector, useAppDispatch } from "../../hooks";
@@ -39,6 +40,7 @@ export const HomePage: React.FC<HomePageProps> = () => {
         selectedLink={selectedLink}
         onLinkClick={setSelectedLink}
       />
+      <FilterBar/>
       <div className={styles.wrapper}>
         <div className={styles.listContainer}>
           <AllFilmsList allFilms={allFilms} genres={allgenres}></AllFilmsList>

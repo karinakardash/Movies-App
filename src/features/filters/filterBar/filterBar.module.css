@@ -1,0 +1,155 @@
+.formContainer{
+    padding: 48px 40px;
+    background-color: var(--form-background-color);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 518px;
+    height: 100vh;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: var(--primary-text-color);
+    margin-bottom: 48px;
+}
+.form {
+    width: 100%;
+    border: none;
+    background-color: var(--form-background-color);
+  }
+.subtitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--primary-text-color);
+    display: block;
+    width: 100%;
+  }
+
+.radioGroup {
+	display: inline-block;
+	overflow: hidden;
+    width: 100%;
+    padding-bottom: 67px;
+    margin-top: 8px;
+    position: relative;
+}
+
+.radioGroup::before {
+    content: "";
+	display: block;
+    height: 2px;
+    background-color: var(--input-background-color);
+    width: 100%;
+    position: absolute;
+    top: 86px;
+    left: 0;
+}
+
+.radioGroupItem {
+	float: left;   
+    width: 50%; 
+}
+.radioGroup input[type=radio] {
+	display: none;
+}
+.radioGroup label {
+	display: inline-block;
+	cursor: pointer;
+	border: 2px solid var(--input-border-color);
+	user-select: none;
+    font-size: 16px;
+    line-height: 52px;
+    font-weight: 500;
+    width: 100%;
+    color: var(--menu-text-color);
+    text-align: center;
+}
+ 
+.radioGroup .radioGroupItem:first-child label {
+	border-radius: 10px 0 0 10px;
+}
+.radioGroup .radioGroupItem:last-child label {
+	border-radius: 0 10px 10px 0;
+}
+/*  
+.radioGroup input[type=radio]:checked {
+	background: var(--input-background-color);
+    color: var(--primary-text-color);
+} */
+ 
+/* Hover
+.form_radio_group label:hover {
+	color: #666;
+} */
+ 
+.selectGenres{
+    border-radius: 10px;
+    background-color: var(--input-background-color);
+    padding: 12px 20px 0 20px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.genre{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding:4px 8px;
+    background-color: var(--form-background-color);
+    color: var(--primary-text-color);
+    display: inline-block;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+}
+.cross{
+    margin-left: 12px;
+}
+
+.years, .rating{
+    margin-bottom: 24px;
+    display: flex;
+    margin-top: 8px;
+}
+
+.input {
+    width: calc((100% - 40px) / 2);
+    display: block;
+    background-color: var(--input-background-color);
+    color: var(--primary-text-color);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px;
+    border: 2px solid var(--input-border-color);
+    border-radius: 10px;
+  }
+
+  .input:first-child {
+    margin-right: 40px;
+  }
+
+  .input::placeholder {
+    color: var(--menu-text-color);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  } 
+
+  .buttons{
+    display: flex;
+  }
+  .cancel, .save{
+    display: block;
+    max-width: 199px;
+    width: 100%;
+  }
+  .cancel{
+    background-color: #323537;
+    margin-right: 40px;
+  }
