@@ -3,8 +3,8 @@ import { actions } from "../../features/all-films/allFilmsSlice";
 import { Header } from "../../features/header/Header";
 import { Password } from "../../features/settings/password/Password";
 import { Profile } from "../../features/settings/profile/Profile";
-import { setUser, setUserName } from "../../features/user";
-import { useAppSelector, useAppDispatch } from "../../hooks";
+import { setUser } from "../../features/user";
+import { useAppSelector, useAppDispatch, useAuth } from "../../hooks";
 import { LinkButtons } from "../../types";
 import { FormButton } from "../../ui/formButton/FormButton";
 import { Sidebar } from "../../ui/sidebar/Sidebar";
@@ -20,18 +20,18 @@ type SettingsPageProps = {};
 
 export const SettingsPage: React.FC<SettingsPageProps> = () => {
   const [selectedLink, setSelectedLink] = useState(LinkButtons.SETTINGS);
-  const [page, setPage] = useState(1);
   const appRef = useContext(AppContext);
   const userName = useAppSelector((state)=> state.user.name) ?? "";
   const userEmail = useAppSelector((state)=> state.user.email)?? "";
-
   const [name, setName] = useState(userName);
   const [email, setEmail] = useState(userEmail);
   const [thema, setThema] = useState("Light");
+  const [checked, setChecked] = useState(false);
   const [newPassword, setNewPassword] = useState("");
   const [isPasswordError, setIsPasswordError] = useState(false);
   const dispatch = useAppDispatch();
-
+  const { isAuth } = useAuth();
+  
   useEffect(() => {
     dispatch(actions.clearMoviesState());
   }, []);
@@ -39,7 +39,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
   const handleSettingsSave = (name: string, email: string, newPassword:string) => {
     const auth = getAuth();
     const user = auth.currentUser;
-    if(user){
+    if(isAuth && user){
       updateEmail(user, email).then(() => {
       console.log("Email updated")
       }).catch((error) => {
@@ -60,7 +60,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
       });
     };
 
-    if(user && newPassword){
+    if(user && newPassword && isAuth){
       updatePassword(user, newPassword).then(() => {
         console.log("Password updated")
       }).catch((error) => {
@@ -80,11 +80,15 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
       <FilterBar/>
       <div className={styles.wrapper}>
         <div className={styles.settingsBox}>
+        {isAuth ? (
+          <>
        <Profile nameValue={name} emailValue={email} onChangeName={(e) => setName(e.target.value)} onChangeEmail={(e) => setEmail(e.target.value)}></Profile>
        <Password newPassword={newPassword} setNewPassword={(e) => setNewPassword(e.target.value)}
- ></Password>
- <ColorMode thema={thema} setThema={(e) => {
+ ></Password> </>) : null}
+
+ <ColorMode checked={checked} thema={thema} setThema={(e) => {
   const style = appRef?.current!.style!;
+  setChecked(!checked);
   if (e.target.checked) {
     style.setProperty("--background-color", "#000000");
     style.setProperty("--primary-text-color", "#ffffff");
@@ -113,9 +117,22 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
         ) : null
         }
  <div className={styles.buttons}>
-       <FormButton className={styles.cancel}>Cancel</FormButton>
+       <FormButton className={styles.cancel}
+        onClick={(e) => {e.preventDefault(); setName(userName); setEmail(userEmail); setThema("Light"); setNewPassword(""); setChecked(false); 
+        const style = appRef?.current!.style!;
+        style.removeProperty("--background-color");
+        style.removeProperty("--primary-text-color");
+        style.removeProperty("--input-background-color");
+        style.removeProperty("--form-background-color");
+        style.removeProperty("--input-border-color");
+        style.removeProperty("--button-background-color");
+        style.removeProperty("--button-text-color");
+        style.removeProperty("--form-border-color");
+        }}
+        >
+          Cancel</FormButton>
        <FormButton className={styles.save} 
-        onClick={(e) => {e.preventDefault(); handleSettingsSave(name, email, newPassword); setIsPasswordError(false)}}
+        onClick={(e) => {e.preventDefault(); if(isAuth) {handleSettingsSave(name, email, newPassword)}; setIsPasswordError(false)}}
         >
           Save
           </FormButton>

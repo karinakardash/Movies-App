@@ -7,12 +7,14 @@ type ColorModeProps = {
   className?: string;
   thema:string;
   setThema: (e:any )=>void;
+  checked:boolean;
 };
 
 export const ColorMode: React.FC<ColorModeProps> = ({
   className = "",
   thema,
-  setThema
+  setThema,
+  checked
 }) => {
 
   return (
@@ -27,7 +29,7 @@ export const ColorMode: React.FC<ColorModeProps> = ({
 
       <div className={styles.switchBox}>
             <label className={styles.switch}>
-               <input type="checkbox" className={styles.switchInput} onChange={setThema}></input>
+               <input type="checkbox" className={styles.switchInput} onChange={setThema} checked={checked}></input>
                <span className={styles.switchSlider}></span>
             </label>
          </div> 
