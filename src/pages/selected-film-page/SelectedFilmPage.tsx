@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FilterBar } from "../../features/filters/filterBar/filterBar";
 import { Header } from "../../features/header/Header";
 import { fetchRecommendationsStart } from "../../features/recommendations";
 import { fetchSelectedFilmStart } from "../../features/selected-film";
@@ -37,6 +38,7 @@ export const SelectedFilmPage: React.FC<SelectedFilmPageProps> = () => {
         selectedLink={selectedLink}
         onLinkClick={setSelectedLink}
       />
+      <FilterBar/>
       {Object.keys(film).length && id ? (
         <SelectedFilmContainer
           id={id}

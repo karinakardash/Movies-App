@@ -1,8 +1,6 @@
 import React from "react";
 import Flickity from "react-flickity-component";
-
 import { IMovie } from "../../features/all-films/types";
-
 import styles from "./Carousel.module.css";
 import { Card } from "../card/Card";
 import { buildImagePath } from "../../utils/buildImagePath";
@@ -19,7 +17,6 @@ type CarouselProps = {
 };
 
 export const Carousel: React.FC<CarouselProps> = ({ title, items, genres }) => {
-  //   let flkty = null;
 
   const flickityOptions = {
     accessibility: false,
@@ -36,7 +33,6 @@ export const Carousel: React.FC<CarouselProps> = ({ title, items, genres }) => {
       <Flickity
         className={styles.slider}
         options={flickityOptions}
-        // flickityRef={(ref) => (flkty = ref)}
       >
         {items &&
           items.map((film) => {

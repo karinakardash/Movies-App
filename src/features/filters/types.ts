@@ -1,9 +1,9 @@
 export type FiltersPayload = {
-  sort_by: string;
-  release_date_gte: string;
-  release_date_lte: string;
-  vote_average_gte: number;
-  vote_average_lte: number;
-  with_genres: string;
+  sort_by: string | undefined;
+  release_date_gte: string | undefined;
+  release_date_lte: string | undefined;
+  vote_average_gte: string | undefined;
+  vote_average_lte: string | undefined;
+  with_genres: string | undefined;
   page:number;
 };

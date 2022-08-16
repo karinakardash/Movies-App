@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { allFilmsReducer } from "./features/all-films";
 import { favoritesReducer } from "./features/favorites";
+import { filtersReducer } from "./features/filters";
 import { genresReducer } from "./features/genres";
 import { recommendationsReducer } from "./features/recommendations";
 import { searchReducer } from "./features/search";
@@ -22,6 +23,7 @@ export const allReducers = combineReducers({
   recommendations: recommendationsReducer,
   favoritesFilm: favoritesReducer,
   user: userReducer,
+  filteredList: filtersReducer,
 });
 export const store = configureStore({
   reducer: allReducers,

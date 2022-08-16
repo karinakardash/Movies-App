@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IMovie } from "../all-films/types";
 
 const favoritesSlice = createSlice({
   name: "favoritesFilm",

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { AppContext } from "./AppContext";
 import { FavoritesPage } from "./pages/favorites-page/FavoritesPage";
+import { FilterPage } from "./pages/filter-page/FilterPage";
 import { HomePage } from "./pages/home-page/HomePage";
 import { LoginPage } from "./pages/login-page/LoginPage";
 import { NewPasswordPage } from "./pages/new-password-page/NewPasswordPage";
@@ -47,6 +48,10 @@ function App() {
          <Route
           path={AppPages.SEARCH}
           element={<SearchPage />}
+        ></Route>
+          <Route
+          path={AppPages.FILTER}
+          element={<FilterPage />}
         ></Route>
       </Routes>
       </AppContext.Provider>

@@ -7,6 +7,23 @@
     z-index: 1000;
     width: 518px;
     height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: 4px;
+    scrollbar-color: black rgba(0, 0, 0, 0.3);
+    transition: all 0.7s linear;
+}
+
+.formContainer::-webkit-scrollbar {
+  width: 5px;
+}
+
+.formContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.formContainer::-webkit-scrollbar-thumb {
+  background-color: var(--input-background-color);
+  border-radius: 2px;
 }
 
 .title{
@@ -14,7 +31,6 @@
     font-size: 24px;
     line-height: 36px;
     color: var(--primary-text-color);
-    margin-bottom: 48px;
 }
 .form {
     width: 100%;
@@ -29,6 +45,12 @@
     display: block;
     width: 100%;
   }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+  }
 
 .radioGroup {
 	display: inline-block;
@@ -41,9 +63,9 @@
 
 .radioGroup::before {
     content: "";
-	display: block;
+	  display: block;
     height: 2px;
-    background-color: var(--input-background-color);
+    background-color: var(--input-border-color);
     width: 100%;
     position: absolute;
     top: 86px;
@@ -52,7 +74,7 @@
 
 .radioGroupItem {
 	float: left;   
-    width: 50%; 
+  width: 50%; 
 }
 .radioGroup input[type=radio] {
 	display: none;
@@ -99,7 +121,8 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    padding:4px 8px;
+    padding:2px 6px;
+    border:2px solid var(--form-border-color);
     background-color: var(--form-background-color);
     color: var(--primary-text-color);
     display: inline-block;
@@ -109,6 +132,7 @@
 }
 .cross{
     margin-left: 12px;
+    cursor: pointer;
 }
 
 .years, .rating{

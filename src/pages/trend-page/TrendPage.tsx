@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FilterBar } from "../../features/filters/filterBar/filterBar";
 import { fetchMovieGenresStart } from "../../features/genres";
 import { Header } from "../../features/header/Header";
 import { fetchTrendMoviesStart } from "../../features/trend-films";
@@ -38,6 +39,7 @@ export const TrendPage: React.FC<TrendPageProps> = () => {
         selectedLink={selectedLink}
         onLinkClick={setSelectedLink}
       />
+      <FilterBar/>
       <div className={styles.wrapper}>
         <div className={styles.listContainer}>
           <TrendFilmsList

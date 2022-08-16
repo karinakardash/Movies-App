@@ -10,7 +10,7 @@ export const Bookmark: React.FC<BookmarkProps> = ({
   currentState,
 }) => {
   const BookmarkIcon = (
-    <svg
+    <svg className={styles.svg}
       onClick={(event) => {
         event.preventDefault();
         onBookmarkClick();
@@ -29,7 +29,7 @@ export const Bookmark: React.FC<BookmarkProps> = ({
     </svg>
   );
   const PressedBookmarkIcon = (
-    <svg
+    <svg className={styles.pressedSvg}
       onClick={(event) => {
         event.preventDefault();
         onBookmarkClick();

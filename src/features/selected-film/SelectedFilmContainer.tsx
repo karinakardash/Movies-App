@@ -1,14 +1,9 @@
-import { CardList } from "../../ui/card-list/CardList";
 import { IGenre } from "../genres/types";
 import { IMovieDetails } from "./types";
 import styles from "./SelectedFilmContainer.module.css";
 import { buildImagePath } from "../../utils/buildImagePath";
 import { RecommendationsList } from "../recommendations/recommendationsList";
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { useEffect } from "react";
-import { fetchRecommendationsStart } from "../recommendations";
 import { IMovie } from "../all-films/types";
-import { Bookmark } from "../../ui/bookmark/Bookmark";
 import { FilmBookmark } from "../favorites/FilmBookmark";
 
 type SelectedFilmContainerProps = {
@@ -23,7 +18,6 @@ export const SelectedFilmContainer: React.FC<SelectedFilmContainerProps> = ({
   genres,
   id,
 }) => {
-  const data = film || [];
 
   return (
     <div className={styles.wrapper}>
@@ -37,8 +31,6 @@ export const SelectedFilmContainer: React.FC<SelectedFilmContainerProps> = ({
           </div>
           <div className={styles.options}>
             <FilmBookmark id={id} />
-
-            {/* {Bookmark ? <Bookmark id={id} /> : null} */}
             <div className={styles.optionsItem}>
               <svg
                 width="16"

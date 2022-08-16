@@ -118,6 +118,10 @@ tr td:last-child {
   font-weight: 500;
 }
 
+.optionsItem svg path, circle {
+  fill: var(--primary-text-color);
+  stroke:  var(--primary-text-color);
+}
 
 @media (max-width:1250px){
   .wrapper {

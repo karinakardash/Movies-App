@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { CardList } from "../../ui/card-list/CardList";
 import { FilmBookmark } from "../favorites/FilmBookmark";
 import { IGenre } from "../genres/types";

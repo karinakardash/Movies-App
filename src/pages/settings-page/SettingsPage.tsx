@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { actions } from "../../features/all-films/allFilmsSlice";
 import { Header } from "../../features/header/Header";
-import { fetchSearchContentStart, reset } from "../../features/search";
 import { Password } from "../../features/settings/password/Password";
 import { Profile } from "../../features/settings/profile/Profile";
 import { setUser, setUserName } from "../../features/user";
@@ -13,6 +12,7 @@ import styles from "./SettingsPage.module.css";
 import { getAuth, updateEmail, updatePassword, updateProfile } from "firebase/auth";
 import { ColorMode } from "../../features/settings/color-mode/ColorMode";
 import { AppContext } from "../../AppContext";
+import { FilterBar } from "../../features/filters/filterBar/filterBar";
 
 const LINKS_LIST = Object.values(LinkButtons);
 
@@ -64,7 +64,6 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
       updatePassword(user, newPassword).then(() => {
         console.log("Password updated")
       }).catch((error) => {
-        // setIsPasswordError(true)
         console.log(error)
       });
     }
@@ -72,22 +71,13 @@ export const SettingsPage: React.FC<SettingsPageProps> = () => {
 
   return (
     <>
-      <Header
-        // onInput={(e) => {
-        //   dispatch(
-        //     fetchSearchContentStart({
-        //       query: e.currentTarget.value,
-        //       page: page,
-        //     })
-
-        //   );
-        // }}
-      />
+      <Header/>
       <Sidebar
         links={LINKS_LIST}
         selectedLink={selectedLink}
         onLinkClick={setSelectedLink}
       />
+      <FilterBar/>
       <div className={styles.wrapper}>
         <div className={styles.settingsBox}>
        <Profile nameValue={name} emailValue={email} onChangeName={(e) => setName(e.target.value)} onChangeEmail={(e) => setEmail(e.target.value)}></Profile>

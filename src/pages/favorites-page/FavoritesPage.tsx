@@ -4,14 +4,13 @@ import { AllFilmsList } from "../../features/all-films/allFilmsList";
 import { IMovie } from "../../features/all-films/types";
 import { fetchMovieGenresStart } from "../../features/genres";
 import { Header } from "../../features/header/Header";
-import { fetchSearchContentStart } from "../../features/search";
-import { fetchTrendMoviesStart } from "../../features/trend-films";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 import { LinkButtons } from "../../types";
 import { MainButton } from "../../ui/button/MainButton";
 import { Sidebar } from "../../ui/sidebar/Sidebar";
 import styles from "./FavoritesPage.module.css";
 import { actions } from "../../features/all-films/allFilmsSlice";
+import { FilterBar } from "../../features/filters/filterBar/filterBar";
 
 const LINKS_LIST = Object.values(LinkButtons);
 
@@ -60,6 +59,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
         selectedLink={selectedLink}
         onLinkClick={setSelectedLink}
       />
+      <FilterBar/>
       <div className={styles.wrapper}>
         {favoriteMoviesFullList.length > 0 ? (
           <div className={styles.listContainer}>

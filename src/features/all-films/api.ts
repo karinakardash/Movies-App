@@ -1,5 +1,5 @@
 import { API_BASE, API_LANGUAGE, API_KEY } from "../../api/config";
-import { IMovie, GetAllFilmsPayload, ISearch } from "./types";
+import { IMovie, GetAllFilmsPayload } from "./types";
 
 export namespace FilmsApi {
   export async function getAllFilmsFetch(

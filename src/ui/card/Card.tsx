@@ -1,4 +1,3 @@
-import { Bookmark } from "../bookmark/Bookmark";
 import styles from "./Card.module.css";
 
 type CardProps = {

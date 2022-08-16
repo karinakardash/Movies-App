@@ -1,5 +1,6 @@
 import { all } from "redux-saga/effects";
 import { allFilmsSagas } from "./features/all-films";
+import { filtersSagas } from "./features/filters";
 import { genresSagas } from "./features/genres";
 import { recommendationsSagas } from "./features/recommendations";
 import { searchSagas } from "./features/search";
@@ -14,5 +15,6 @@ export function* rootSaga() {
     trendFilmsSagas(),
     selectedFilmSagas(),
     recommendationsSagas(),
+    filtersSagas(),
   ]);
 }

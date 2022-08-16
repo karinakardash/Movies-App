@@ -9,3 +9,6 @@
   margin-right: 1px;
   cursor: pointer;
 }
+.optionsItem .svg path {
+  fill: var(--primary-text-color);
+}

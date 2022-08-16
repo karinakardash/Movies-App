@@ -1,4 +1,4 @@
-.input {
+/* .input {
   background-color: var(--input-background-color);
   border-radius: 10px;
   padding: 14px 48px 14px 18px;
@@ -10,8 +10,29 @@
   line-height: 24px;
   font-weight: 500;
   order: 0;
-}
+} */
 
+.input{
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--primary-text-color);
+  outline: none;
+  border: none;
+  background-color: var(--input-background-color);
+}
+.inputBox{
+  background-color: var(--input-background-color);
+  border-radius: 10px;
+  width: 100%;
+  border: 2px solid var(--input-border-color);
+  margin-right: 41px;
+  order: 0;
+  height: 52px;
+  padding: 14px 48px 14px 18px;
+  position: relative;
+};
 .input::placeholder {
   color: var(--menu-text-color);
   font-size: 16px;
@@ -19,8 +40,19 @@
   font-weight: 500;
 }
 
+.filterSvg{
+  position: absolute;
+  right: 22px;
+  top:12px;
+  cursor: pointer;
+}
+
+.filterPathColor{
+  stroke: var(--primary-text-color)
+}
+
 @media (max-width:870px){
-  .input {
+  .inputBox {
     position: absolute;
     top: 140px;
     width: 94%;
@@ -30,14 +62,14 @@
 }
 
 @media (max-width:767px){
-  .input {
+  .inputBox {
     width: 92%;
   }
 }
 @media (max-width:574px){
-  .input {
+  .inputBox {
     left:120px;
-    right: 24px;;
+    right: 24px;
     width: 60%;
     transform:none;
   }
