@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  order: 1;
 }
 .visual {
   min-width: 56px;

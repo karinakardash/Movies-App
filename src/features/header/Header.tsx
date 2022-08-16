@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useAppSelector } from "../../hooks";
-import { SignIn } from "../../ui/sign-in/SignIn";
-import { Username } from "../../ui/username/Username";
+import { Account } from "../account/Account";
 import { Searchbar } from "../search/searchbar/Searchbar";
 import { Burger } from "./burger/Burger";
 import styles from "./Header.module.css";
-import { Menu } from "./menu/Menu";
 
 type HeaderProps = {
 };
@@ -13,6 +11,8 @@ type HeaderProps = {
 export const Header: React.FC<HeaderProps> = ({ }) => {
   const [isOpen, setIsOpen] = useState(false);
   const userName = useAppSelector((state)=> state.user.name) ?? "";
+  // const { isAuth, email } = useAuth();
+  
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -50,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({ }) => {
             />
           </svg>
         </div>
-          {userName?  <Username children={userName} /> : <SignIn/>}
+          <Account/>
           <Burger onClick={() => setIsOpen(!isOpen)} >
           </Burger>
         <Searchbar></Searchbar>

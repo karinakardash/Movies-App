@@ -47,6 +47,11 @@
   cursor: pointer;
 }
 
+.filterSvg circle{
+  fill:#7B61FF;
+  stroke: #7B61FF;
+}
+
 .filterPathColor{
   stroke: var(--primary-text-color)
 }

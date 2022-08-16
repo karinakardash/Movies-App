@@ -1,0 +1,14 @@
+.userNameAccount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    order: 1;
+    width: 100%;
+    max-width: 260px;
+  }
+.svg{
+    cursor: pointer;
+}
+.svg path{
+    fill: var(--primary-text-color);
+}
