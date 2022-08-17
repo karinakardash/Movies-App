@@ -1,16 +1,3 @@
-/* .input {
-  background-color: var(--input-background-color);
-  border-radius: 10px;
-  padding: 14px 48px 14px 18px;
-  color: var(--primary-text-color);
-  width: 100%;
-  border: 2px solid var(--input-border-color);
-  margin-right: 41px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  order: 0;
-} */
 
 .input{
   width: 100%;
@@ -21,7 +8,11 @@
   outline: none;
   border: none;
   background-color: var(--input-background-color);
+  padding: 14px 48px 14px 18px;
+  height: 100%;
+  border-radius: 10px;
 }
+
 .inputBox{
   background-color: var(--input-background-color);
   border-radius: 10px;
@@ -29,8 +20,6 @@
   border: 2px solid var(--input-border-color);
   margin-right: 41px;
   order: 0;
-  height: 52px;
-  padding: 14px 48px 14px 18px;
   position: relative;
 };
 .input::placeholder {
@@ -55,7 +44,9 @@
 .filterPathColor{
   stroke: var(--primary-text-color)
 }
-
+.inputBox:focus{
+  border:2px solid var(--violet-color)
+}
 @media (max-width:870px){
   .inputBox {
     position: absolute;

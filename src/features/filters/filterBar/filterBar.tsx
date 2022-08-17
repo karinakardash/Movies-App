@@ -60,12 +60,23 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         <h3 className={styles.subtitle}>Sort by</h3>
         <div className={`${styles.item} ${styles.radioGroup}`}>
 	<div className={styles.radioGroupItem}>
-    <label>Rating
-		<input id="radio1" type="radio" name="radio" value="rating" onChange={(e) => setSort(e.target.value)} checked={sort === "rating"}/>
+    <label id="labelRating">Rating
+		<input id="radio1" type="radio" name="radio" value="rating" 
+    onChange={(e) => {
+      setSort(e.target.value);
+      // if(sort === "year" && e.target.parentElement) {
+      //   e.target.parentElement.style.background="#323537";
+      //   e.target.parentElement.style.color="#ffffff"
+      //   } else if (e.target.parentElement){
+      //     e.target.parentElement.style.background="var(--form-background-color)";
+      //   }
+      
+      }} 
+        checked={sort === "rating"}/>
 		</label>
 	</div>
     <div className={styles.radioGroupItem}>
-    <label>Year
+    <label className={styles.label}>Year
 		<input id="radio2" type="radio" name="radio" value="year" onChange={(e) => setSort(e.target.value)} checked={sort === "year"}/>
     </label>
 	</div>

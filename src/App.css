@@ -83,3 +83,15 @@ html {
 .flickity-button svg {
   width: 100%;
 }
+
+input {
+  transition: all 0.3s linear;
+}
+
+input:focus{
+  border:2px solid var(--violet-color)
+}
+
+button {
+  transition: all 0.3s linear;
+}

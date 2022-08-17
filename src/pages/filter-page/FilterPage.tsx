@@ -10,6 +10,7 @@ import { LinkButtons } from "../../types";
 import { MainButton } from "../../ui/button/MainButton";
 import { Sidebar } from "../../ui/sidebar/Sidebar";
 import styles from "./FilterPage.module.css";
+import {returnGenres} from "../../utils/returnGenres"
 
 const LINKS_LIST = Object.values(LinkButtons);
 

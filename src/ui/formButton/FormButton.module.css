@@ -14,3 +14,7 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.button:hover{
+  background-color: #917CFF;
+}

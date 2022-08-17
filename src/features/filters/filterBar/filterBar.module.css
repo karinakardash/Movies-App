@@ -177,3 +177,7 @@
     background-color: #323537;
     margin-right: 40px;
   }
+  .cancel:hover{
+    background: #323537 !important;
+    color: #AFB2B6;
+  }

@@ -26,9 +26,10 @@
 .save{
   margin: 0 0 0 40px;
 }
-/* .settingsBox{
-  width:80%;
-} */
+.cancel:hover{
+  background: #323537 !important;
+  color: #AFB2B6;
+}
 
 
 @media (max-width:1250px){

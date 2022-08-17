@@ -4,13 +4,14 @@ import { AllFilmsList } from "../../features/all-films/allFilmsList";
 import { IMovie } from "../../features/all-films/types";
 import { fetchMovieGenresStart } from "../../features/genres";
 import { Header } from "../../features/header/Header";
-import { useAppSelector, useAppDispatch } from "../../hooks";
-import { LinkButtons } from "../../types";
+import { useAppSelector, useAppDispatch, useAuth } from "../../hooks";
+import { AppPages, LinkButtons } from "../../types";
 import { MainButton } from "../../ui/button/MainButton";
 import { Sidebar } from "../../ui/sidebar/Sidebar";
 import styles from "./FavoritesPage.module.css";
 import { actions } from "../../features/all-films/allFilmsSlice";
 import { FilterBar } from "../../features/filters/filterBar/filterBar";
+import { useNavigate } from "react-router-dom";
 
 const LINKS_LIST = Object.values(LinkButtons);
 
@@ -24,7 +25,13 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
   const allgenres = useAppSelector((state) => state.genres.genres);
   const trendFilms = useAppSelector((state) => state.trendFilms.trendFilms);
 
+  const { isAuth } = useAuth();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
+
+  if (!isAuth) {
+    navigate(AppPages.LOGIN);
+  }
 
   useEffect(() => {
     dispatch(actions.clearMoviesState());
@@ -51,7 +58,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
     ...favoritesMoviesListfromTrendsFilms,
   ];
 
-  return (
+ return (
     <>
       <Header/>
       <Sidebar
@@ -205,7 +212,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
               />
             </svg>
           </div>
-        )}
+        )} 
         {favoriteMoviesFullList && favoriteMoviesFullList.length > 20 ? (
           <MainButton
             className={styles.button}
@@ -232,5 +239,5 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = () => {
         ) : null}
       </div>
     </>
-  );
+  )
 };
