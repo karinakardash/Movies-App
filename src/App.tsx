@@ -19,41 +19,35 @@ function App() {
   const appRef = React.createRef<HTMLDivElement>();
   return (
     <div className="App" ref={appRef}>
-       <AppContext.Provider value={appRef}>
-      <Routes>
-        <Route path={AppPages.HOME} element={<HomePage></HomePage>}></Route>
-        <Route path={AppPages.TRENDS} element={<TrendPage></TrendPage>}></Route>
-        <Route
-          path={`${AppPages.FILM_PAGE}/:id`}
-          element={<SelectedFilmPage />}
-        ></Route>
-        <Route path={AppPages.FAVORITES} element={<FavoritesPage />}></Route>
-        <Route path={AppPages.LOGIN} element={<LoginPage />}></Route>
-        <Route
-          path={AppPages.REGISTRATION}
-          element={<RegistrationPage />}
-        ></Route>
-         <Route
-          path={AppPages.RESET_PASSWORD}
-          element={<ResetPasswordPage />}
-        ></Route>
+      <AppContext.Provider value={appRef}>
+        <Routes>
+          <Route path={AppPages.HOME} element={<HomePage></HomePage>}></Route>
           <Route
-          path={AppPages.NEW_PASSWORD}
-          element={<NewPasswordPage />}
-        ></Route>
+            path={AppPages.TRENDS}
+            element={<TrendPage></TrendPage>}
+          ></Route>
           <Route
-          path={AppPages.SETTINGS}
-          element={<SettingsPage />}
-        ></Route>
-         <Route
-          path={AppPages.SEARCH}
-          element={<SearchPage />}
-        ></Route>
+            path={`${AppPages.FILM_PAGE}/:id`}
+            element={<SelectedFilmPage />}
+          ></Route>
+          <Route path={AppPages.FAVORITES} element={<FavoritesPage />}></Route>
+          <Route path={AppPages.LOGIN} element={<LoginPage />}></Route>
           <Route
-          path={AppPages.FILTER}
-          element={<FilterPage />}
-        ></Route>
-      </Routes>
+            path={AppPages.REGISTRATION}
+            element={<RegistrationPage />}
+          ></Route>
+          <Route
+            path={AppPages.RESET_PASSWORD}
+            element={<ResetPasswordPage />}
+          ></Route>
+          <Route
+            path={AppPages.NEW_PASSWORD}
+            element={<NewPasswordPage />}
+          ></Route>
+          <Route path={AppPages.SETTINGS} element={<SettingsPage />}></Route>
+          <Route path={AppPages.SEARCH} element={<SearchPage />}></Route>
+          <Route path={AppPages.FILTER} element={<FilterPage />}></Route>
+        </Routes>
       </AppContext.Provider>
     </div>
   );
