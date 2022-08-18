@@ -6,7 +6,7 @@ export enum LinkButtons {
 }
 
 export enum AppPages {
-  HOME = "/",
+  HOME = "/home",
   TRENDS = "/trends",
   FILM_PAGE = "/home/movie",
   FAVORITES = "/favorites",
