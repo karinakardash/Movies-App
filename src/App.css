@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap");
+
 #root {
   --menu-text-color: #80858b;
   --violet-color: #7b61ff;
   --secondary-text-color: #afb2b6;
-  --button-background-color: #AFB2B6;
+  --button-background-color: #afb2b6;
   --primary-text-color: #242426;
   --background-color: #ffffff;
   --input-background-color: #ffffff;
@@ -10,7 +12,7 @@
   --form-background-color: #ffffff;
   --input-border-color: #afb2b6;
   --button-text-color: #ffffff;
-  --form-border-color:#afb2b6;
+  --form-border-color: #afb2b6;
 }
 @media (prefers-color-scheme: dark) {
   #root {
@@ -18,7 +20,7 @@
     --primary-text-color: #ffffff;
     --input-background-color: #323537;
     --form-background-color: #242426;
-    --form-border-color:#242426;
+    --form-border-color: #242426;
     --input-border-color: #323537;
     --button-background-color: #323537;
     --button-text-color: #ffffff;
@@ -31,6 +33,7 @@
   box-sizing: border-box;
   list-style: none;
   outline: none;
+  font-family: "Exo 2", sans-serif;
 }
 
 a {
@@ -88,8 +91,8 @@ input {
   transition: all 0.3s linear;
 }
 
-input:focus{
-  border:2px solid var(--violet-color)
+input:focus {
+  border: 2px solid var(--violet-color);
 }
 
 button {

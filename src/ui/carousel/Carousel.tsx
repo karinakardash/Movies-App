@@ -17,7 +17,6 @@ type CarouselProps = {
 };
 
 export const Carousel: React.FC<CarouselProps> = ({ title, items, genres }) => {
-
   const flickityOptions = {
     accessibility: false,
     cellAlign: "left",
@@ -30,10 +29,7 @@ export const Carousel: React.FC<CarouselProps> = ({ title, items, genres }) => {
       <div className={styles.heading}>
         <h3 className={styles.title}>{title}</h3>
       </div>
-      <Flickity
-        className={styles.slider}
-        options={flickityOptions}
-      >
+      <Flickity className={styles.slider} options={flickityOptions}>
         {items &&
           items.map((film) => {
             return (
